@@ -4,6 +4,10 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## 1.1.7 (TBD)
+
+* TBD
+
 ## [1.1.6](https://github.com/ngageoint/mgrs-ios/releases/tag/1.1.6) (04-08-2024)
 
 * grid-ios 1.0.7
