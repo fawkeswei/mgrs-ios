@@ -6,8 +6,8 @@
 //
 
 import XCTest
-@testable import grid_ios
-@testable import mgrs_ios
+@testable import Grid
+@testable import MGRS
 
 /**
  * Grid Zones Test

@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import grid_ios
-import sf_ios
+import Grid
+import SimpleFeatures
 import MapKit
 
 /**
@@ -438,7 +438,7 @@ public class MGRS: Hashable {
      * @return MGRS
      */
     public static func from(_ longitude: Double, _ latitude: Double) -> MGRS {
-        return from(longitude, latitude, Unit.DEGREE)
+        return from(longitude, latitude, GridUnit.DEGREE)
     }
     
     /**
@@ -452,7 +452,7 @@ public class MGRS: Hashable {
      *            unit
      * @return MGRS
      */
-    public static func from(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit) -> MGRS {
+    public static func from(_ longitude: Double, _ latitude: Double, _ unit: GridUnit) -> MGRS {
         return from(GridPoint(longitude, latitude, unit))
     }
     
@@ -662,7 +662,7 @@ public class MGRS: Hashable {
      *            unit
      * @return MGRS coordinate
      */
-    public static func coordinate(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit) -> String {
+    public static func coordinate(_ longitude: Double, _ latitude: Double, _ unit: GridUnit) -> String {
         return from(longitude, latitude, unit).coordinate()
     }
     
@@ -679,7 +679,7 @@ public class MGRS: Hashable {
      *            grid type precision
      * @return MGRS coordinate
      */
-    public static func coordinate(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit, _ type: GridType?) -> String {
+    public static func coordinate(_ longitude: Double, _ latitude: Double, _ unit: GridUnit, _ type: GridType?) -> String {
         return from(longitude, latitude, unit).coordinate(type)
     }
     

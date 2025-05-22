@@ -4,9 +4,12 @@ Adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
-## 1.1.7 (TBD)
+## 2.0.0 (6-6-2025)
 
-* TBD
+* Adds Swift Package Manager support and removes Cocoapods (deprecated)
+* Updates Github workflow and local build.sh for testing
+* New app demo project using SPM
+* Builds against new Grid 2.0.0 (grid-ios) and SimpleFeatures 5.0.0 (sf-ios) with new enum symbols exposed to Swift
 
 ## [1.1.6](https://github.com/ngageoint/mgrs-ios/releases/tag/1.1.6) (04-08-2024)
 

@@ -21,7 +21,7 @@ View the latest [Appledoc](http://ngageoint.github.io/mgrs-ios/docs/api/)
 
 ```swift
 
-import mgrs_ios
+import MGRS
 
 ```
 
@@ -192,7 +192,7 @@ if zoomGrids.hasGrids() {
 
 ```objectivec
 
-#import "mgrs_ios-Swift.h"
+#import "MGRS-Swift.h"
 
 ```
 
@@ -205,36 +205,37 @@ MKTileOverlay *tileOverlay = [[MGRSTileOverlay alloc] init];
 
 ### Build ###
 
-[![Build & Test](https://github.com/ngageoint/mgrs-ios/workflows/Build%20&%20Test/badge.svg)](https://github.com/ngageoint/mgrs-ios/actions/workflows/build-test.yml)
+[![Build](https://github.com/ngageoint/mgrs-ios/workflows/Build/badge.svg)](https://github.com/ngageoint/mgrs-ios/actions/workflows/build.yml)
 
-Build this repository using Xcode and/or CocoaPods:
+Build and Test (Uses UIKit, so we build with xcodebuild instead of SPM).
 
-    pod install
+    ./build.sh
 
-Open mgrs-ios.xcworkspace in Xcode or build from command line:
+You can build and test if you open the Package.swift in Xcode.
 
-    xcodebuild -workspace 'mgrs-ios.xcworkspace' -scheme mgrs-ios build
-
-Run tests from Xcode or from command line:
-
-    xcodebuild test -workspace 'mgrs-ios.xcworkspace' -scheme mgrs-ios -destination 'platform=iOS Simulator,name=iPhone 15'
 
 ### Include Library ###
 
-Include this repository by specifying it in a Podfile using a supported option.
+Use this library via SPM in your Package.swift:
 
-Pull from [CocoaPods](https://cocoapods.org/pods/mgrs-ios):
+    dependencies: [
+        .package(url: "https://github.com/ngageoint/mgrs-ios.git", branch: "release/2.0.0"),
+    ]
+    
+Or as a tagged release:
 
-    pod 'mgrs-ios', '~> 1.1.6'
+    dependencies: [
+        .package(url: "https://github.com/ngageoint/mgrs-ios.git", from: "2.0.0"),
+    ]
 
-Pull from GitHub:
+Reference it in your Package.swift target:
 
-    pod 'mgrs-ios', :git => 'https://github.com/ngageoint/mgrs-ios.git', :branch => 'master'
-    pod 'mgrs-ios', :git => 'https://github.com/ngageoint/mgrs-ios.git', :tag => '1.1.6'
-
-Include as local project:
-
-    pod 'mgrs-ios', :path => '../mgrs-ios'
+    .target(
+        name: "MyApp",
+        dependencies: [
+            .product(name: "MGRS", package: "mgrs-ios"),
+        ],
+    ),
 
 ### Remote Dependencies ###
 
