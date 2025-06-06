@@ -6,18 +6,13 @@
 //
 
 import Foundation
-import grid_ios
+import Grid
 
 /**
  * MGRS property loader
  */
 public class MGRSProperties: GridProperties {
-    
-    /**
-     * Bundle Name
-     */
-    public static let BUNDLE_NAME = "mgrs-ios.bundle"
-    
+        
     /**
      * Properties Name
      */
@@ -26,7 +21,16 @@ public class MGRSProperties: GridProperties {
     /**
      * Singleton instance
      */
-    private static let _instance = MGRSProperties(MGRSProperties.self, BUNDLE_NAME, PROPERTIES_NAME)
+    private static let _instance: MGRSProperties = {
+        guard let url = Bundle.module.url(forResource: PROPERTIES_NAME, withExtension: PropertyConstants.PROPERTY_LIST_TYPE) else {
+            fatalError("Unable to find required resource: \(PROPERTIES_NAME).\(PropertyConstants.PROPERTY_LIST_TYPE)")
+        }
+
+        guard let data = try? Data(contentsOf: url) else {
+            fatalError("Unable to load required resource: \(url)")
+        }
+        return MGRSProperties(data)
+    }()
     
     public static var instance: MGRSProperties {
         get {

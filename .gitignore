@@ -6,3 +6,4 @@ xcuserdata/
 *.swp
 Carthage/
 build/
+.build/

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import grid_ios
+import Grid
 import MapKit
 
 /**
@@ -274,7 +274,7 @@ public class UTM {
      * @return UTM
      */
     public static func from(_ longitude: Double, _ latitude: Double) -> UTM {
-        return from(longitude, latitude, Unit.DEGREE)
+        return from(longitude, latitude, GridUnit.DEGREE)
     }
     
     /**
@@ -288,7 +288,7 @@ public class UTM {
      *            unit
      * @return UTM
      */
-    public static func from(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit) -> UTM {
+    public static func from(_ longitude: Double, _ latitude: Double, _ unit: GridUnit) -> UTM {
         return from(GridPoint(longitude, latitude, unit))
     }
     
@@ -304,7 +304,7 @@ public class UTM {
      * @return UTM
      */
     public static func from(_ longitude: Double, _ latitude: Double, _ zone: Int) -> UTM {
-        return from(longitude, latitude, Unit.DEGREE, zone)
+        return from(longitude, latitude, GridUnit.DEGREE, zone)
     }
     
     /**
@@ -320,7 +320,7 @@ public class UTM {
      *            zone number
      * @return UTM
      */
-    public static func from(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit, _ zone: Int) -> UTM {
+    public static func from(_ longitude: Double, _ latitude: Double, _ unit: GridUnit, _ zone: Int) -> UTM {
         return from(GridPoint(longitude, latitude, unit), zone)
     }
     
@@ -338,7 +338,7 @@ public class UTM {
      * @return UTM
      */
     public static func from(_ longitude: Double, _ latitude: Double, _ zone: Int, _ hemisphere: Hemisphere) -> UTM {
-        return from(longitude, latitude, Unit.DEGREE, zone, hemisphere)
+        return from(longitude, latitude, GridUnit.DEGREE, zone, hemisphere)
     }
     
     /**
@@ -356,7 +356,7 @@ public class UTM {
      *            hemisphere
      * @return UTM
      */
-    public static func from(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit, _ zone: Int, _ hemisphere: Hemisphere) -> UTM {
+    public static func from(_ longitude: Double, _ latitude: Double, _ unit: GridUnit, _ zone: Int, _ hemisphere: Hemisphere) -> UTM {
         return from(GridPoint(longitude, latitude, unit), zone, hemisphere)
     }
     
@@ -434,7 +434,7 @@ public class UTM {
      *            unit
      * @return UTM string
      */
-    public static func format(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit) -> String {
+    public static func format(_ longitude: Double, _ latitude: Double, _ unit: GridUnit) -> String {
         return from(longitude, latitude, unit).format()
     }
     
@@ -466,7 +466,7 @@ public class UTM {
      *            zone number
      * @return UTM string
      */
-    public static func format(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit, _ zone: Int) -> String {
+    public static func format(_ longitude: Double, _ latitude: Double, _ unit: GridUnit, _ zone: Int) -> String {
         return from(longitude, latitude, unit, zone).format()
     }
     
@@ -502,7 +502,7 @@ public class UTM {
      *            hemisphere
      * @return UTM string
      */
-    public static func format(_ longitude: Double, _ latitude: Double, _ unit: grid_ios.Unit, _ zone: Int, _ hemisphere: Hemisphere) -> String {
+    public static func format(_ longitude: Double, _ latitude: Double, _ unit: GridUnit, _ zone: Int, _ hemisphere: Hemisphere) -> String {
         return from(longitude, latitude, unit, zone, hemisphere).format()
     }
     

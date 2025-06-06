@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import grid_ios
+import UIKit
+import Grid
 
 /**
  * Grids

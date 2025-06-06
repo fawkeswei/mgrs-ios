@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import grid_ios
+import Grid
 
 /**
  * Grid Zones, Longitudinal Strips, and Latitude Bands

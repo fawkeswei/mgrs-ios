@@ -7,8 +7,8 @@
 
 import SwiftUI
 import MapKit
-import mgrs_ios
-import grid_ios
+import MGRS
+import Grid
 
 struct ContentView: View {
 

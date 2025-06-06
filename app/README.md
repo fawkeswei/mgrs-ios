@@ -10,6 +10,6 @@ The MGRS App is written in SwiftUI and provides a Military Grid Reference System
 
 [Build](https://github.com/ngageoint/mgrs-ios#build) this repository
 
-Open `mgrs-ios.xcworkspace` in Xcode
+Open `MGRS-Demo.xcodeproj` in Xcode
 
 Start the `app` scheme

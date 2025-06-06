@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import mgrs_ios
+@testable import MGRS
 
 /**
  * Grid Type Test
